@@ -1,0 +1,54 @@
+/* Light Grey Background for Navbar */
+.navbar {
+    background-color: #edf0f2 !important;
+    /* Light Grey Color */
+}
+
+/* Style for Navbar Links */
+.navbar-nav .nav-item .nav-link {
+    color: #333 !important;
+    /* Dark text for links */
+    font-weight: 500;
+    /* Slightly bold text */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #007bff !important;
+    /* Blue color on hover */
+}
+
+/* Style for Dropdown Menu */
+.navbar-nav .nav-item .dropdown-menu {
+    background-color: #f8f9fa !important;
+    /* Light Grey Background */
+    border: none;
+    /* Remove the border for a cleaner look */
+}
+
+.navbar-nav .nav-item .dropdown-item {
+    color: #333 !important;
+    /* Dark text color */
+}
+
+.navbar-nav .nav-item .dropdown-item:hover {
+    background-color: #007bff;
+    /* Blue background on hover */
+    color: white;
+    /* White text on hover */
+}
+
+.navbar-nav .nav-item .dropdown-divider {
+    background-color: #ddd;
+    /* Light grey divider */
+}
+
+/* Optional: Styling for the brand */
+.navbar-brand {
+    color: #333 !important;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #007bff !important;
+    /* Blue on hover */
+}

@@ -1,0 +1,15 @@
+<div class="container">
+  <p>parent works!</p>
+</div>
+
+<app-resuable
+  #res
+  [alertMsg]="'Parent Message....!'"
+  [alertType]="'Success'"
+  (messageEvent)="receiveMessage($event)"
+></app-resuable>
+
+<strong>{{ message }}</strong>
+
+<br />
+<button class="btn btn-primary" (click)="callResuable()">Call Resuable</button>
