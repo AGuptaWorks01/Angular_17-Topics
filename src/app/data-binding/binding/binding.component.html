@@ -1,0 +1,18 @@
+<div class="container">
+  <strong>{{ Interpolation }}</strong>
+  <hr />
+
+  <img [src]="imageUrl" />
+  <hr />
+
+  <button (click)="onClick()">Click me</button>
+  <hr />
+  <input type="text" [(ngModel)]="name" />
+  <p>Youe Name is {{ name }}</p>
+  <hr />
+
+  <p [style.color]="textColor">This text is styled using style binding</p>
+
+  
+  <!-- <p [class.active]="isActive" >This text will be styled using class binding</p> -->
+</div>

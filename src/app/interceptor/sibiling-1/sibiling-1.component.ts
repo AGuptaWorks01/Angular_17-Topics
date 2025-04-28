@@ -8,9 +8,12 @@ import { SharedService } from '../shared.service';
   styleUrl: './sibiling-1.component.css'
 })
 export class Sibiling1Component {
+
   constructor(private sharedService: SharedService) { }
 
   sendMessage() {
-    this.sharedService.changeMessage("hello from sibiling!")
+    this.sharedService.changeMessage("Hello From Sibiling 2!")
+    console.log(".......Muje call kiya ");
   }
+
 }

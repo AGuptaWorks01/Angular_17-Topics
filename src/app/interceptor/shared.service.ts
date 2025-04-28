@@ -6,8 +6,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class SharedService {
 
-  private messageSource = new BehaviorSubject<string>('Inital Value');
-
+  private messageSource = new BehaviorSubject<string>("Initial Value..!")
   currentMessage$ = this.messageSource.asObservable()
 
   changeMessage(message: string) {
