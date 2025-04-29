@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
       <!-- ==========================  Component Interaction  -->
       <li class="nav-item dropdown">
         <a
@@ -34,9 +35,10 @@
             >
           </li>
         </ul>
-        <!-- ==========================  Component Interaction  -->
+        <!-- ========================== END Component Interaction ====================== -->
       </li>
-      <!-- ========================== Data IBinding -->
+
+      <!-- ============================ Data Binding ======================== -->
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
@@ -49,6 +51,29 @@
           <li>
             <a class="dropdown-item" routerLink="/data-binding/binding"
               >Binding</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <!-- ========================== Forms ==================== -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          routerLink="forms"
+          role="button"
+          data-bs-toggle="dropdown"
+          >Forms
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" routerLink="/forms/templateForm"
+              >TemplateForm</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/forms/reactiveForm"
+              >ReactiveForm</a
             >
           </li>
         </ul>

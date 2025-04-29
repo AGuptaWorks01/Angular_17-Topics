@@ -12,8 +12,10 @@ export class BindingComponent {
   // Interpolation(One-way Data Binding)
   Interpolation: string = " I'm One Way Data Binding!"
 
+
   // Property Binding(One-way Data Binding)
   imageUrl: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s';
+
 
   // Event Binding(One-way Data Binding)
   onClick() {
@@ -26,7 +28,8 @@ export class BindingComponent {
 
 
   // Style Binding
-  textColor = 'blue';
+  textColor = 'red';
+
 
   isActive = false;
 }

@@ -1,0 +1,81 @@
+<div class="d-flex justify-content-center">
+  <h4>Template Driven Form</h4>
+</div>
+
+<div class="container">
+  <div class="custom-form-container">
+    <form #userFormRef="ngForm" (ngSubmit)="OnSubmit(userFormRef)">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          id="name"
+          [(ngModel)]="userForm.name"
+          required
+          #name="ngModel"
+          placeholder="Enter your name..."
+        />
+      </div>
+      <div class="text-danger" *ngIf="name.invalid && name.touched">
+        Name is required.
+      </div>
+
+      <div class="mb-3">
+        <label for="middleName" class="form-label">Middle Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="middleName"
+          name="middleName"
+          [(ngModel)]="userForm.middleName"
+          required
+          placeholder="Enter your middleName..."
+          minlength="3"
+          #middleName="ngModel"
+          appNoSpace
+        />
+        <div
+          class="text-danger"
+          *ngIf="middleName.invalid && (middleName.dirty || middleName.touched)"
+        >
+          <div *ngIf="middleName.errors?.['required']">
+            Middle Name is required.
+          </div>
+          <!-- <div *ngIf="middleName.errors?.['minlength']">
+            Minimum 3 characters required.
+          </div> -->
+          <div *ngIf="middleName.errors?.['noSpace']">
+            Only spaces are not allowed.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          [(ngModel)]="userForm.lastName"
+          required
+          #lastName="ngModel"
+          placeholder="Enter your lastName..."
+        />
+      </div>
+      <div class="text-danger" *ngIf="lastName.invalid && lastName.touched">
+        Last Name is required.
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="userFormRef.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

@@ -14,6 +14,8 @@ export class Sibiling2Component implements OnInit {
   // =======================  HostBinding
   @HostBinding('class.active') isActive = false;
 
+
+  // Shared Siblings
   constructor(private sharedService: SharedService) { }
 
   ngOnInit(): void {

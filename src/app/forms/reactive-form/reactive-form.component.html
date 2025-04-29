@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <h4>Reactive Form</h4>
+</div>
+
+<div class="container">
+  <div class="custom-form-container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="name" class="form-control" formControlName="name" />
+        <div
+          class="text-danger"
+          *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched"
+        >
+          @if (userForm.get('name')?.hasError('required')) {Name is required.}
+          @if (userForm.get('name')?.hasError('minlength')) {Minimum 3
+          characters required.}
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="middleName" class="form-label">Middle Name</label>
+        <input type="text" class="form-control" formControlName="middleName" />
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="
+          userForm.get('middleName')?.invalid &&
+          userForm.get('middleName')?.dirty
+        "
+      >
+        @if (userForm.get('middleName')?.hasError('required')&&
+        !userForm.get('middleName')?.value) {Middle Name is required. }
+        <!--  -->
+        @if (userForm.get('middleName')?.hasError('minlength')&&
+        userForm.get('middleName')?.value?.length>0) { Middle Name must be at
+        least 3 characters long. }
+        <!--  -->
+        @if (userForm.get('middleName')?.hasError('noSpace')&&
+        userForm.get('middleName')?.value?.length>0) {Only spaces are not
+        allowed. }
+      </div>
+
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName" />
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="
+          userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched
+        "
+      >
+        @if (userForm.get('lastName')?.hasError('required')) {Name is required.}
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="userForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
