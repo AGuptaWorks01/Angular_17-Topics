@@ -12,5 +12,13 @@ export const routes: Routes = [
     {
         path: "forms",
         loadChildren: () => import('./forms/forms.module').then(m => m.MyFormsModule)
+    },
+    {
+        path: "calls",
+        loadChildren: () => import('./api-call/api-call.module').then(m => m.ApiCallModule)
+    },
+    {
+        path: "crud",
+        loadChildren: () => import('./crud-local-storage/crud-local-storage.module').then(m => m.CrudLocalStorageModule)
     }
 ];

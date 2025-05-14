@@ -1,0 +1,67 @@
+<form [formGroup]="userForm" (ngSubmit)="addUpdate()">
+  <input type="text" formControlName="name" placeholder="Enter Name" required />
+  <div
+    *ngIf="
+      userForm.controls['name'].invalid && userForm.controls['name'].touched
+    "
+  >
+    <small
+      style="color: red"
+      *ngIf="userForm.controls['name'].errors?.['required']"
+      >Name is required.</small
+    >
+    <small
+      style="color: rgb(227, 12, 12)"
+      *ngIf="userForm.controls['name'].errors?.['minlength']"
+    >
+      Name must be at least 5 characters long.
+    </small>
+  </div>
+  <br />
+
+  <input
+    type="email"
+    formControlName="email"
+    placeholder="Enter Email"
+    required
+  />
+  <div
+    *ngIf="
+      userForm.controls['email'].invalid && userForm.controls['email'].touched
+    "
+  >
+    <small style="color: red">Valid email is required.</small>
+  </div>
+
+  <br />
+  <button type="submit" [disabled]="userForm.invalid">
+    {{ isEditMode ? "Update User" : "Add User" }}
+  </button>
+</form>
+
+<div class="container">
+  <table>
+    <thead>
+      <th>Sr.no</th>
+      <th>Name</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+      @for (user of user(); track $index) {
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button (click)="editUser(user)" style="background: yellow">
+            Edit
+          </button>
+          <button (click)="deleteUser(user.id)" style="color: red">
+            Delete
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
