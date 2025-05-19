@@ -31,6 +31,7 @@ export class LocalService {
   }
 
   addUser(user: User) {
+    // console.log(user);
     const newUser = { ...user, id: Date.now() }
     const updateUser = [...this.userSubject(), newUser]
     this.saveToLocalStorage(updateUser)

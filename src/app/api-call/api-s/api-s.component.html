@@ -1,4 +1,8 @@
-<p>api-s works!</p>
-<div *ngFor="let product of products">
-  {{ product.title }}
+<div class="container">
+
+  <div *ngFor="let product of products">
+    {{ product.title  | uppercase }}
+    {{ product  | uppercase }}
+  </div>
+  
 </div>

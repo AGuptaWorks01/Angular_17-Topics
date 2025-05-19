@@ -25,9 +25,11 @@ export class LocalStorageComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.userForm = this.fb.group({
-      name: ["", Validators.required, Validators.minLength(5)],
-      email: ["", Validators.required, Validators.email]
+      id: [null],
+      name: ["", [Validators.required, Validators.minLength(5)]],
+      email: ["", [Validators.required, Validators.email]]
     })
+
   }
 
   ngOnInit(): void {
@@ -45,8 +47,10 @@ export class LocalStorageComponent implements OnInit {
   }
 
   editUser(user: any) {
+    console.log('Editing user:', user);  // Debug
     // this.userForm = { ...user }
     this.userForm.patchValue(user)
+    this.isEditMode = true
   }
 
   deleteUser(id: any) {

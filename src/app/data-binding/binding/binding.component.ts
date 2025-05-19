@@ -30,6 +30,4 @@ export class BindingComponent {
   // Style Binding
   textColor = 'red';
 
-
-  isActive = false;
 }

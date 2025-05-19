@@ -1,4 +1,6 @@
 <form [formGroup]="userForm" (ngSubmit)="addUpdate()">
+  <input type="hidden" formControlName="id" />
+
   <input type="text" formControlName="name" placeholder="Enter Name" required />
   <div
     *ngIf="
@@ -20,7 +22,7 @@
   <br />
 
   <input
-    type="email"
+    type="text"
     formControlName="email"
     placeholder="Enter Email"
     required
