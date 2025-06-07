@@ -16,7 +16,7 @@ export class ApiSComponent {
   ngOnInit() {
     this.productService.getProducts().subscribe(data => {
       this.products = data;
-      console.log("__________________", data);
+      // console.log("__________________", data);
     });
   }
 }

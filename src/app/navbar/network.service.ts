@@ -25,7 +25,6 @@ export class NetworkService {
 
     private watchConnection() {
         interval(2000).subscribe(() => this.checkConnection());
-
         window.addEventListener('online', () => this.updateStatus(true));
         window.addEventListener('offline', () => this.updateStatus(false));
     }
